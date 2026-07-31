@@ -21,5 +21,30 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+    (function(){
+      function scrollToHashOrTop(){
+        var hash = window.location.hash;
+        if (hash && hash.length > 1) {
+          var tries = 0;
+          var tryScroll = function(){
+            var el = document.querySelector(hash);
+            if (el) {
+              el.scrollIntoView({behavior:"smooth", block:"start"});
+            } else if (tries < 15) {
+              tries++;
+              setTimeout(tryScroll, 80);
+            }
+          };
+          tryScroll();
+        } else {
+          window.scrollTo(0, 0);
+        }
+      }
+      ["popstate","pushState","replaceState","hashchange"].forEach(function(evt){
+        window.addEventListener(evt, function(){ setTimeout(scrollToHashOrTop, 30); });
+      });
+    })();
+    </script>
   </body>
 </html>
