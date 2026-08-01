@@ -203,6 +203,25 @@
   .section-head{text-align:center;max-width:640px;margin:0 auto 20px;}
   .section-head h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px;}
   .section-head p{color:var(--text-muted);}
+
+  /* Sembunyikan header/branding bawaan tema WordPress yang bentrok sama header custom kita.
+     Menyasar beberapa selector umum dari berbagai tema populer (Twenty Twenty-Four/Five,
+     Astra, GeneratePress, OceanWP, dll). Kalau tema kamu spesifik dan masih nongol,
+     inspect element bagian header tema itu dan kabari selector class/id-nya. */
+  body > header:not(#coffiy-app header),
+  body > .wp-block-template-part:has(.wp-block-site-title),
+  body .site-header,
+  body #masthead,
+  body .main-header,
+  body .ast-header-wrap,
+  body #header-wrap,
+  body .wp-block-site-title,
+  body .wp-block-navigation:not(#coffiy-app *),
+  body .site-branding {
+    display:none !important;
+  }
+  /* Hilangkan juga padding/margin atas yang biasanya dikasih tema buat nyisain ruang header */
+  body{ padding-top:0 !important; margin-top:0 !important; }
 </style>
 
 <div id="coffiy-app">
