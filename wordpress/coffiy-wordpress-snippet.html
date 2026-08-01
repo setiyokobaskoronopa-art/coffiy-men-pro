@@ -11,21 +11,39 @@
     --accent:#d99b3f;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
+  #coffiy-app{
+    all: initial;
+    display:block;
+    font-family:'Inter',sans-serif !important;
+    background:var(--bg) !important;
+    color:var(--text) !important;
+    line-height:1.6 !important;
+    min-height:100vh;
+    width:100%;
+    font-size:16px;
   }
-  .display{font-family:'Archivo',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;}
-  .container{max-width:1120px;margin:0 auto;padding:0 24px;}
+  #coffiy-app *, #coffiy-app *::before, #coffiy-app *::after{
+    box-sizing:border-box !important;
+    margin:0;
+    padding:0;
+    font-family:inherit;
+    text-align:left;
+    float:none !important;
+  }
+  #coffiy-app ul, #coffiy-app li{list-style:none !important;}
+  .display{font-family:'Archivo',sans-serif !important;font-weight:900 !important;text-transform:uppercase;letter-spacing:-0.01em;}
+  .container{max-width:1120px;margin:0 auto !important;padding:0 24px;}
   .eyebrow{
     display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.15em;
     text-transform:uppercase;color:var(--primary-2);border:1px solid rgba(179,36,26,0.4);
     background:rgba(179,36,26,0.08);padding:6px 14px;margin-bottom:20px;
   }
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
+  #coffiy-app a{color:inherit !important;text-decoration:none !important;background:none !important;border:none;}
+  #coffiy-app img{
+    max-width:100% !important;display:block !important;
+    border:none !important;box-shadow:none !important;background:none !important;
+    border-radius:0 !important;padding:0 !important;
+  }
   section{padding:96px 0;}
   @media (max-width:768px){ section{padding:56px 0;} }
 
@@ -187,6 +205,7 @@
   .section-head p{color:var(--text-muted);}
 </style>
 
+<div id="coffiy-app">
 
 <header>
   <div class="container nav-wrap">
@@ -628,3 +647,4 @@
 })();
 </script>
 
+</div>
