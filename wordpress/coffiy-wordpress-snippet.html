@@ -221,8 +221,24 @@
   body ul.wp-block-page-list,
   body nav.wp-block-navigation:not(#coffiy-app *),
   body .wp-block-navigation:not(#coffiy-app *),
-  body .site-branding {
+  body .wp-block-pages-list__item__link,
+  body .wp-block-navigation-item__content,
+  body .wp-block-pages-list__item,
+  body .site-branding,
+  /* versi specificity-boosted (ulang class buat ngalahin !important tema) */
+  .wp-block-page-list.wp-block-page-list.wp-block-page-list,
+  .wp-block-navigation.wp-block-navigation.wp-block-navigation:not(#coffiy-app *),
+  .wp-block-pages-list__item__link.wp-block-pages-list__item__link,
+  .wp-block-navigation-item__content.wp-block-navigation-item__content,
+  .site-header.site-header.site-header,
+  .wp-block-site-title.wp-block-site-title.wp-block-site-title {
     display:none !important;
+    visibility:hidden !important;
+    opacity:0 !important;
+    width:0 !important;
+    height:0 !important;
+    overflow:hidden !important;
+    pointer-events:none !important;
   }
   /* Hilangkan juga padding/margin atas yang biasanya dikasih tema buat nyisain ruang header */
   body{ padding-top:0 !important; margin-top:0 !important; }
